@@ -1,0 +1,254 @@
+body {
+    text-align: center;
+    background-color: #f4f4f4;
+    cursor: url('../assets/images/balloon.png') 30 55, auto;
+
+}
+
+#titulo-principal {
+  color: #f4f9fa; /* ou qualquer cor: red, blue, #333, etc. */
+  font-size: 6vh;
+  text-align: center;
+  margin-top: 0vh;
+  margin-bottom: 2vh;
+  z-index: 1;
+}
+/*  botões de idioma  */
+#seletor-lingua {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1;
+}
+
+#seletor-lingua button {
+  margin: 2px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+
+/* Botão do canto superior esquerdo */
+#btn-esquerda {
+  display: inline-block;   /* ou block */
+  width: fit-content;      /* ajusta à imagem */
+  position: fixed;
+  top: 10vh;      /* Ajuste a distância do topo conforme necessário */
+  left: 1vw;     /* Ajuste a distância da esquerda conforme necessário */
+  z-index: 3;  /* Garante que fiquem acima de outros elementos */
+  padding:0px 5px; /*área clicavel*/
+  background-color: #0972e200; /* Cor de fundo */
+  color: white;
+  /*border: 2px dotted red;   visualiza a área clicável */
+  border-radius: 90px;
+  cursor: pointer;
+  
+}
+
+/* Botão do canto superior direito */
+#btn-direita {
+  position: fixed;
+  top: 10vh;      /* Alinhado verticalmente com o botão da esquerda */
+  right: 1vw;    /* Ajuste a distância da direita conforme necessário */
+  z-index: 3;
+  padding: 10px 20px;
+  background-color: #28a74600;
+  color: white;
+  border: none;
+  /*border: 2px dotted red;   visualiza a área clicável */
+  border-radius: 90px; /* arredonda a área clicavel */
+  cursor: pointer;
+}
+.btn-imagem1 {
+  position: relative;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+/* manipula o tamanho da imagem do botão */
+.btn-imagem1 img {
+  width: 12vw;
+  height: auto;
+  display: block;
+}
+/* Centraliza o texto sobre a imagem */
+.btn-imagem1 span {
+  position: absolute;
+  top: 28%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Estilo do texto */
+  font-size: 2vh;
+  color: rgb(255, 255, 255); /* ou outra cor que se veja */
+  font-weight: bold;
+  text-shadow: 1px 1px 2px black; /* melhora legibilidade */
+}
+/* Exemplo de efeito hover  */
+.btn-imagem1:hover span {
+  color: yellow;
+  text-shadow: 2px 2px 8px black;
+}
+.btn-imagem2 {
+  position: relative;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+/* manipula o tamanho da imagem do botão */
+.btn-imagem2 img {
+  width: 12vw;
+  height: auto;
+  display: block;
+}
+/* Centraliza o texto sobre a imagem */
+.btn-imagem2 span {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* Estilo do texto */
+  font-size: 2vh;
+  color: white; /* ou outra cor que se veja */
+  font-weight: bold;
+  text-shadow: 1px 1px 2px black; /* melhora legibilidade */
+}
+/* Exemplo de efeito hover  */
+.btn-imagem2:hover span {
+  color: yellow;
+  text-shadow: 2px 2px 8px black;
+}
+
+
+/* controla o svg container e o mapa */
+#map-container {
+  position: relative;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center; /* centra verticalmente */
+ width: 98vw;
+ height: 98vh;
+ margin-bottom: 5px;
+  
+}
+
+/* container onde está o mapa */
+#svg-container {
+  
+  background-image: url("");
+  background-size:cover;
+  width: 90%;
+  height: 90%;
+  margin-bottom: 5px;
+}
+
+
+/*  controla o mapa mundo */
+#map {
+  width: 100%;
+  height: 100%;
+  max-width: 100vw;
+  max-height: 100vh;
+  object-fit: contain;
+  display: block;
+  position: relative;
+  aspect-ratio: 1177 / 690; /* se suportado */
+  z-index: 1;
+  margin-bottom: 5px;
+}
+
+
+/*#map {
+    width: 100%;
+    height: 100%;
+    z-index:1;
+}*/
+/* container do svg , controla a imagem de fundo*/
+
+    
+
+
+
+.coordinates-box {
+    margin-top: 10px;
+    padding: 10px;
+    background: #ddd;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+path.clickable-svg-element {
+    cursor: pointer;
+    cursor: url('../assets/images/balloon\ on\ hover.png') 30 55, auto;
+    /*fill: rgba(255, 255, 0, 0.5); /* Cor amarela semi-transparente */
+    transition: fill 0.1s;
+}
+.clickable-svg-element:hover {
+    fill: rgba(115, 255, 0, 0.5); /* Muda para vermelho ao passar o mouse */
+}
+
+path#rios, path[fill='black'] {
+    pointer-events: none;
+}
+
+
+
+
+
+/* Pop up para confirma sucesso ou não, nas respostas*/
+.popup {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .popup-conteudo {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    max-width: 400px;
+  }
+  
+  .popup-conteudo img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  .popup-conteudo button {
+    padding: 8px 16px;
+    background-color: #007B55;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  #fundo-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover; /* mantém proporção da imagem */
+    z-index: 0;
+  }
+  
+  /*#map {
+    max-width: 100vw;
+    max-height: 100vh;
+    position: relative;
+    object-fit: contain;       /* mantém o SVG visível por inteiro 
+    aspect-ratio: 16 / 9;
+    z-index: 1; /* fica acima da imagem
+  }*/
+  /* Container que ocupa todo o ecrã e centraliza o SVG */
+ 

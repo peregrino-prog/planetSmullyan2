@@ -1,0 +1,45 @@
+body {
+    background-color: #70b5ca;/* quando a imagem não serve fica a cor */
+    background-image: url(''); /* caminho da imagem */
+    background-size: cover;        /* preenche o ecrã todo */
+    background-position: center;   /* centra a imagem */
+    background-repeat: no-repeat;  /* não repete */
+    background-attachment: fixed;  /* mantém o fundo fixo ao fazer scroll */
+    
+    color: rgb(14, 13, 13); 
+    font-family: Arial, sans-serif;
+    font-weight: bold;  /* letras grossas */
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+.container-biografia {
+    max-width: 100%;
+    margin: auto;
+}
+
+.img-biografia {
+    max-width: 300px;
+    width: 80%;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 12px;
+}
+
+ul {
+    text-align: left;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #0c53a0;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px;
+}

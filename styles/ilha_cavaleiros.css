@@ -1,0 +1,291 @@
+body {
+    background-color: #e3f0e850;
+    font-family: 'Segoe UI', sans-serif;
+   
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #333;
+}
+
+
+
+/*  botões principais  */
+.botoes {
+  position: fixed;
+  top: 0;                /* Fixa os botões ao topo do ecrã */
+  left: 0;
+  right: 0;
+  height: 10vh;
+  display: flex;            /* Necessário para `justify-content` funcionar */
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5vw;           /* Espaço interno nas laterais (não empurra o container) */
+  z-index: 20000;
+  background-color: rgba(255, 255, 255, 0); /* opcional: se quiseres ver onde está */
+  pointer-events: auto;
+}
+
+/*  texto dos botões*/
+.voltar {
+    margin: 5px;
+    padding: 12px 24px;       /* Aumenta o espaço interno (tamanho do botão) */
+    font-size: 2vh;
+    background-color: #7b0025;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.voltar:hover {
+    background-color: #005f40;
+}
+
+/*contador de páginas */
+.visor-indice {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    z-index: 200;
+    font-family: 'Segoe UI', 'sans-serif';
+  }
+  
+
+
+
+/*  containers das personagens */
+.linha-inferior {
+   position: fixed;         /* fixa na janela */
+    bottom: 30px;            /* distância ao fundo */
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    /*border: dashed;*/
+    
+    pointer-events: none;    /* evita que interfira com cliques, opcional */
+    
+  }
+  
+  .containerInferior {
+    width: 13%;
+    height: 65vh; /*  altura aumentada */
+    background-color: transparent;
+    /*border: dotted;  ou mantém se quiser contorno */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 101;
+    pointer-events: auto;
+    
+  }
+  
+  .containerInferior img {
+    max-width: 100%;
+    max-height: 65vh;
+    object-fit: contain;
+    /*border: double;  ou mantém se quiser contorno */
+  }
+
+  #slotVazio {
+    position: relative;
+    z-index: 102;
+  }
+  
+  
+
+
+
+/*       end            */
+
+.container {  /*contentor do texto principal e imagem puzzle*/
+    
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start; /* ou flex-start/center */
+    align-items: flex-start ;       /* alinhar ao topo */
+    left:25vw;
+    top:7vh;
+    max-width: 60vw;
+    max-height: 20vh;
+    gap: 20px;
+    margin-top: 0px;
+    padding: 20px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0);
+    z-index:-1;
+    /*border: dotted;*/
+    position:fixed;
+    
+}
+/* contentor só para o texto*/
+#texto-container {
+    background-color: rgb(253, 253, 253); /* ou outra cor */
+    padding: 10px;
+    border-radius: 8px;
+    display: none; /* começa escondido por defeito */
+  }
+  
+
+  
+  
+
+/*  texto dentro do contentor do menu botões  */
+.texto {
+  max-height: 20vh;
+  overflow-y: auto;
+  font-size: 2vh;
+  font-weight: bold;
+  color: #181717;
+  margin-bottom: 5px;
+  padding: 5px;
+  text-align: justify;
+  max-width: 50vw;
+  
+}
+
+.texto strong {
+    color: #006400;
+}
+
+.cavaleiros {
+    color: red;
+    font-weight: bold;
+}
+
+.escudeiros {
+    color: blue;
+    font-weight: bold;
+}
+
+.normais {
+    color: green;
+    font-weight: bold;
+}
+
+.tipo.homem {
+    color: #2a2aff;
+    font-weight: bold;
+}
+
+.tipo.mulher {
+    color: #ff69b4;
+    font-weight: bold;
+}
+
+.civilizada {
+    font-weight: bold;
+    color: #5a5a5a;
+}
+
+.lei {
+    font-style: italic;
+    color: #8b0000;
+    font-weight: bold;
+}
+/* controla as imagens do pop up e do contentor do topo */
+img {
+    width: 50vh !important;
+    max-width: 50vh !important;
+    height: auto;
+    margin-top: -10vh; /*  forçar a imagem puzzle a alinhar com o topo*/
+    filter: drop-shadow(0 0 2px #02000e); /* Halo preto para dar profundidade */
+}
+
+/*   controla as imagens do contentor à direita (tabelas verdade)  */
+#div-imagem-destaque {
+    position: fixed;
+    display: flex;
+    align-items: flex-end;     /* centra verticalmente */
+    justify-content: center; /* centra horizontalmente */
+    bottom: 10vh;
+    right: 5%;
+    width: 40vw;         /* aumenta a largura */
+    height: 70vh;        /* ou define uma altura fixa, ex: 50vh */
+    z-index: -1; /*era 9999*/
+    background: rgba(255, 255, 255, 0);
+    padding: 1%;
+    border-radius: 12px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.014);
+    /*overflow: hidden; evita que a imagem ultrapasse*/ 
+    
+}
+
+#img-destaque {
+    position: relative;                 /* necessário para que 'left' funcione */
+    left:50%;    /* move o ponto de origem para o meio */
+    margin-top: 15%;
+    transform: translateX(-50%) scale(1.5); /* centra + escala */
+    max-width: none;                   /* remove limitação se existir */
+    max-height: 50vh;
+    display: block;
+  }
+  
+
+
+
+
+
+/*  containers balões de fala  */
+
+.linha-baloes {
+    position: fixed;
+    bottom: 70vh; /*  altura desejada dos balões de fala */
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    z-index: 1500; /*  garantir que ficam à frente */
+    pointer-events: none;
+  }
+  
+  .container-balao {
+    width: 23vw; /* igual aos slots/personagens */
+    height: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    pointer-events: auto; /*para o scroll*/
+  }
+
+   
+  
+  
+  .balao {
+    position: absolute;        /* permite controlar onde o balão aparece */
+    bottom: 0;                 /* cola o balão à base da linha-balao */
+    transform: translateY(-50%);
+    max-height: 28vh;          /* limite vertical */
+    overflow-y: auto;          /* scroll se o texto for muito */
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 2vh;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.171);
+    color: black;
+    z-index: 1501;
+    max-width:90%;
+    position: relative;
+    text-align: center;
+  }
+  /*balão de fala de Smullyan*/
+  #falaSmullyan {
+    position:center;
+    bottom:-8vh;
+    width: 15vw;
+    max-width: 20vw;
+  }
+
+

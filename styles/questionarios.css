@@ -1,0 +1,130 @@
+/* Blocos arrastáveis */
+.bloco {
+  
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    background: lightblue;
+    border: 2px solid #007B55;
+    border-radius: 8px;
+    cursor: grab;
+    font-weight: bold;
+    font-size: 2vh;
+    text-align: center;
+    transform: translateY(-10%);
+  }
+  
+  /* Container dos blocos 'cavaleiro'  'escudeiro'  'normal' */
+  #blocos-container {
+    position: fixed;             /* Fixa em relação à janela */
+    top: 75vh;                    /* Começa no topo e baixa 45% do viewport */
+    left: 50%;                   /* Começa no meio da largura */
+    transform: translate(-50%, 10%); /* Centraliza no ecrã (ambos os eixos) */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    z-index: 1000;               /* Acima das personagens ou containers */
+
+
+    /*display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    max-width: 100%; */
+  }
+  
+  /* Slots dinâmicos tamanho dos slots */
+  .slot {
+    position: fixed;
+    width: 8vw;
+    height: 5vh;
+    border: 2px dashed #333;
+    background-color: #ffffffcc;
+    border-radius: 8px;
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    font-weight: bold;
+    z-index: 10;
+    font-size: 2vh;
+    text-align: center;
+    transform: translateX(-50%);
+    transform: translateY(450%);
+    
+  }
+  
+  
+  /* Botão de verificação 'responder'*/
+  #verificar {
+    position: fixed;
+    top: 70vh;
+    left: 50%;
+    transform: translateX(-50%); /* centraliza horizontalmente */
+    z-index: 1500;
+  
+    padding: 10px 20px;
+    font-size: 2vh;
+    text-align: center;
+    background-color: #7b0006;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  
+    display: none; /* será ativado pelo JS */
+  }
+  
+
+  #popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /*centralização da imagem eixo xx */
+    height: 100vh; /* centralização eixo yy */
+    background: rgba(0, 0, 0, 0.049);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1999;
+  }
+  
+  #popup-conteudo {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(15, 14, 14, 0.3);
+    max-width: 300px;
+    animation: popIn 0.3s ease;
+  }
+  
+  #popup-imagem {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+  }
+  
+  #popup-mensagem {
+    font-size: 38px;
+    font-weight: bold;
+    color: #ea0e0e;
+  }
+  
+  #popup button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #4c05e3;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  @keyframes popIn {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  
+  

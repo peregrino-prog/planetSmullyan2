@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ilha dos Cavaleiros</title>
+    <link rel="stylesheet" href="../styles/ilha_mortos_vivos.css">
+    <link rel="stylesheet" href="../styles/questionarios.css">
+</head>
+
+<body>
+<!--Contador de cenas-->
+<div id="indice-visor" class="visor-indice">Etapa: 0</div>
+
+<!--botões principais do jogo-->
+<div class="botoes"style="display: flex; flex-direction: row;"> 
+    <button class="voltar" onclick="mostrarAnterior()">◀ Anterior</button>
+    <button class="voltar" onclick="goTo('mapa')">Voltar ao Mapa</button>
+    <button class="voltar" onclick="mostrarProxima()">Avançar ▶</button>
+</div>
+<!-- Container independente reutilizável para imagens em destaque tabelas verdade-->
+<div id="div-imagem-destaque" style="display: none;">
+    <img id="img-destaque"  src="" alt="Imagem em destaque" />
+</div>
+
+<!--Imagem Puzzle-->
+<div class="container">
+    <div id="texto-container" class="texto"></div>
+    <img id="imagem" src="" alt="Imagem da Ilha dos Mortos-Vivos">
+</div>
+
+<!--     conainers das personagens  -->
+<div class="linha-inferior" id="linhaInferior">
+    <div class="containerInferior" id="slotSmullyan"></div>
+    <div class="containerInferior" id="slotEsq1"></div>
+    <div class="containerInferior" id="slotEsq2"></div>
+    <div class="containerInferior" id="slotVazio"></div>
+    <div class="containerInferior" id="slotDir1"></div>
+    <div class="containerInferior" id="slotDir2"></div>
+</div>
+
+<!--   containers das falas  -->
+<div class="linha-baloes" id="linhaBaloes">
+    <div class="container-balao" id="balaoSlot1"><div class="balao" id="falaSmullyan"></div></div> <!--balão de Smullyan definido aparte-->
+    <div class="container-balao" id="balaoSlot2"><div class="balao" id="falaEsquerda1"></div></div>
+    <div class="container-balao" id="balaoSlot3"><div class="balao" id="falaEsquerda2"></div></div>
+    <div class="container-balao" id="balaoSlotVazio"><div class="balao" id="falaCentro"></div></div><!-- adição de um balão para o slot central -->
+    <div class="container-balao" id="balaoSlot4"><div class="balao" id="falaDireita1"></div></div>
+    <div class="container-balao" id="balaoSlot5"><div class="balao" id="falaDireita2"></div></div>
+</div>
+
+<!-- BLOCO DE DECISÃO (escondido inicialmente, via JS) -->
+<div id="blocos-container" style="display: none;"></div>
+<button id="verificar" style="display: none;">Responder</button>
+
+
+<!--ADICIONA UM POP-UP PERSONALIZADO -->
+<div id="popup" class="popup" style="display: none;">
+    <div class="popup-conteudo">
+        <img src="" alt="Resultado" />
+        <p id="popup-mensagem"></p>
+        <button onclick="fecharPopup()">Fechar</button>
+    </div>
+</div>
+
+<script src="../scripts/index.js"></script>
+<script src="../scripts/ilha_mortos_vivos.js"></script>
+<script src="../scripts/questionarios.js"></script>
+
+</body>
+</html>
